@@ -7,15 +7,6 @@
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
-    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
-    <link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
-    <script src="libs/datatables-binding/datatables.js"></script>
-    <script src="libs/jquery/jquery-3.6.0.min.js"></script>
-    <link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <link href="libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
-    <script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
-    <link href="libs/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
-    <script src="libs/crosstalk/js/crosstalk.min.js"></script>
   </head>
   <body>
     <textarea id="source">
@@ -59,7 +50,7 @@ All text under the three question marks are presentation notes; it is hidden fro
 
 
 
-&lt;img src="img/methodology-flowchart.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/methodology-flowchart.png" width="130%" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -94,167 +85,200 @@ All text under the three question marks are presentation notes; it is hidden fro
 
 1. Validate the model using testing set of data
 
----
+???
+Presenter Notes
 
-# Hello World
+Refs for this section: Taubenböck et al 2011; Mojadaddi et al. 2017; Tehrany et al. 2014; Flood database: Tellman et al. 2021
 
-Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
+Methodology: ‘Ensemble-based’ machine learning using SVM (Support Vector Machine)
+Each parameter rendered/built as a raster layer
+Frequency Ratio (FR) approach can be used to estimate flood probability indices, using the hazard parameters (the inputs are each classified using quantile breaks and an FR value assigned to each class). This will output which classes of which parameters (e.g. which values of elevation) are at the highest probability of flood. 
+Apply an SVM model; essentially a statistical theory to minimise operational risk standard, and performs a binary classification on the input pixels. 
+Repeat the process for vulnerability parameters, by classifying the raster cells on a scale (e.g. 0 to 5) of vulnerability depending on the parameter value. 
+The Hazard and Vulnerability models can then be multiplied together, and a weighted overlay applied.
+A training set taken from historic flood events can be used to validate the built model. 
 
-
-```r
-remotes::install_github("yihui/xaringan")
-```
-
---
-
-You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rstudio/), but you do not have to.
-
-- Create a new R Markdown document from the menu `File -&gt; New File -&gt; R Markdown -&gt; From Template -&gt; Ninja Presentation`;&lt;sup&gt;1&lt;/sup&gt;
 
 ---
 
-# Hello Ninja
+class: middle, center
 
-As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
-
-1. The [remark.js](https://remarkjs.com) library;
-
-1. The **xaringan** package;
-
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
-
----
-
-# Tables
-
-If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
-
-
-```r
-knitr::kable(head(iris), format = 'html')
-```
+# EO Data: Hazard
 
 &lt;table&gt;
  &lt;thead&gt;
   &lt;tr&gt;
-   &lt;th style="text-align:right;"&gt; Sepal.Length &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Sepal.Width &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Petal.Length &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Petal.Width &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; Species &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Purpose &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; EO data &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Spatial resolution &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Temporal resolution &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Cost &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Processing &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 5.1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.5 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tidal Range &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BMKG/NOAA Jason-3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3 cm &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; near real-time &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Free &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Some basic calculation &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 4.9 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sea Level Change &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NOAA Jason-3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3 cm &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; near real-time &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Free &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Some basic calculation &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 4.7 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.2 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.3 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Significant Wave Height &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NOAA Jason-3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3 cm &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; near real-time &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Free &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 4.6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.5 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 5.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.9 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.7 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.4 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Historic Flood Data &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BMKG/Global Flood Database &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 250 m &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; N/A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Free &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; N/A &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
 ---
 
+class: middle, center
 
-```r
-DT::datatable(
-  head(iris, 10),
-  fillContainer = FALSE, options = list(pageLength = 8)
-)
-```
+# EO Data: Hazard (cont.)
 
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-8bbc8761ee9079379e1c" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-8bbc8761ee9079379e1c">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
-
----
-
-# Themes
-
-Don't want to learn CSS? Okay, you can use some user-contributed themes. A theme typically consists of two CSS files `foo.css` and `foo-fonts.css`, where `foo` is the theme name. Below are some existing themes:
-
-
-```r
-names(xaringan:::list_css())
-```
-
-```
-##  [1] "chocolate-fonts"  "chocolate"        "default-fonts"   
-##  [4] "default"          "duke-blue"        "fc-fonts"        
-##  [7] "fc"               "glasgow_template" "hygge-duke"      
-## [10] "hygge"            "ki-fonts"         "ki"              
-## [13] "kunoichi"         "lucy-fonts"       "lucy"            
-## [16] "metropolis-fonts" "metropolis"       "middlebury-fonts"
-## [19] "middlebury"       "nhsr-fonts"       "nhsr"            
-## [22] "ninjutsu"         "rladies-fonts"    "rladies"         
-## [25] "robot-fonts"      "robot"            "rutgers-fonts"   
-## [28] "rutgers"          "shinobi"          "tamu-fonts"      
-## [31] "tamu"             "uio-fonts"        "uio"             
-## [34] "uo-fonts"         "uo"               "uol-fonts"       
-## [37] "uol"              "useR-fonts"       "useR"            
-## [40] "uwm-fonts"        "uwm"              "wic-fonts"       
-## [43] "wic"
-```
-
----
-
-# Themes
-
-To use a theme, you can specify the `css` option as an array of CSS filenames (without the `.css` extensions), e.g.,
-
-```yaml
-output:
-  xaringan::moon_reader:
-    css: [default, metropolis, metropolis-fonts]
-```
-
-If you want to contribute a theme to **xaringan**, please read [this blog post](https://yihui.org/en/2017/10/xaringan-themes).    
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Purpose &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; EO data &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Spatial resolution &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Temporal resolution &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Cost &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Processing &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Rainfall  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; SM2RAIN-ASCAT &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 km &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Daily &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Free &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Apply SM2RAIN algorithm to ASCAT product &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Elevation &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NASADEM Global Elevation Model &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 30m  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; N/A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Free &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; N/A &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Slope &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NASADEM Global Elevation Model &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 30m  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; N/A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Free &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Slope algorithm in QGIS &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Land Subsidence &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ALOS PALSAR &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10m &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 11 days &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Free &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Interferometric Synthetic Aperture Radar (InSAR) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 ---
 
-class: center, middle
+# EO Data: Vulnerability
 
-# Thanks!
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Purpose &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; EO data &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Spatial resolution &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Temporal resolution &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Cost &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Processing &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Land-use and Land-cover Recognition &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Landsat data (Landsat 8) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 30 m &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 16 days &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Free &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Supervisory classification, Normalized Difference Built-up Index,Normalized Difference Water Index &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Land-use and Land-cover Recognition &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; SAR (Sentinel-2) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10-20m &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 days &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Free &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Random forest (RF) or multilayer perceptron (MLP) classifiers. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Building/infrastructure quality &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; VHR images (UAV remote sensing) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 30 cm &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Daily &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $1000 per day &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Texture analysis and supervisory classification &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
-Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+---
 
-The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
+## Additional data
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Purpose &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Data &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Scale &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Cost &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Population &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; census &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; district &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Free &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Economic Activity &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; census &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; district &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Free &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

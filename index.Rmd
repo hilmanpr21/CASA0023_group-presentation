@@ -20,6 +20,7 @@ class: inverse, center, middle
 options(htmltools.dir.version = FALSE)
 library(dplyr)
 library(readr)
+library(readxl)
 library(knitr)
 ```
 
@@ -52,7 +53,7 @@ All text under the three question marks are presentation notes; it is hidden fro
 
 
 
-```{r image, echo=FALSE, out.width='80%', fig.align='center'}
+```{r image, echo=FALSE, out.width='130%', fig.align='center'}
 knitr::include_graphics('img/methodology-flowchart.png')
 ```
 
@@ -89,83 +90,59 @@ knitr::include_graphics('img/methodology-flowchart.png')
 
 1. Validate the model using testing set of data
 
----
+???
+Presenter Notes
 
-# Hello World
+Refs for this section: Taubenböck et al 2011; Mojadaddi et al. 2017; Tehrany et al. 2014; Flood database: Tellman et al. 2021
 
-Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
+Methodology: ‘Ensemble-based’ machine learning using SVM (Support Vector Machine)
+Each parameter rendered/built as a raster layer
+Frequency Ratio (FR) approach can be used to estimate flood probability indices, using the hazard parameters (the inputs are each classified using quantile breaks and an FR value assigned to each class). This will output which classes of which parameters (e.g. which values of elevation) are at the highest probability of flood. 
+Apply an SVM model; essentially a statistical theory to minimise operational risk standard, and performs a binary classification on the input pixels. 
+Repeat the process for vulnerability parameters, by classifying the raster cells on a scale (e.g. 0 to 5) of vulnerability depending on the parameter value. 
+The Hazard and Vulnerability models can then be multiplied together, and a weighted overlay applied.
+A training set taken from historic flood events can be used to validate the built model. 
 
-```{r eval=FALSE, tidy=FALSE}
-remotes::install_github("yihui/xaringan")
-```
-
---
-
-You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rstudio/), but you do not have to.
-
-- Create a new R Markdown document from the menu `File -> New File -> R Markdown -> From Template -> Ninja Presentation`;<sup>1</sup>
 
 ---
 
-# Hello Ninja
+class: middle, center
 
-As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
+# EO Data: Hazard
 
-1. The [remark.js](https://remarkjs.com) library;
-
-1. The **xaringan** package;
-
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
-
----
-
-# Tables
-
-If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
-
-```{r}
-knitr::kable(head(iris), format = 'html')
+```{r hazardtbl, echo=FALSE, message=FALSE}
+hazardtbl <- readxl::read_excel("img/eo-source-tables.xlsx", sheet = 1)
+knitr::kable(hazardtbl, format = 'html', col.names = c("Purpose", "EO data", "Spatial resolution", "Temporal resolution", "Cost", "Processing"))
 ```
 
 ---
 
-```{r eval=require('DT'), tidy=FALSE}
-DT::datatable(
-  head(iris, 10),
-  fillContainer = FALSE, options = list(pageLength = 8)
-)
+class: middle, center
+
+# EO Data: Hazard (cont.)
+
+```{r hazardtbl2, echo=FALSE, message=FALSE}
+hazardtbl2 <- readxl::read_excel("img/eo-source-tables.xlsx", sheet = 2)
+knitr::kable(hazardtbl2, format = 'html', col.names = c("Purpose", "EO data", "Spatial resolution", "Temporal resolution", "Cost", "Processing"))
 ```
 
 ---
 
-# Themes
+# EO Data: Vulnerability
 
-Don't want to learn CSS? Okay, you can use some user-contributed themes. A theme typically consists of two CSS files `foo.css` and `foo-fonts.css`, where `foo` is the theme name. Below are some existing themes:
-
-```{r, R.options=list(width = 70)}
-names(xaringan:::list_css())
+```{r vulntbl, echo=FALSE, message=FALSE}
+vulntbl <- readxl::read_excel("img/eo-source-tables.xlsx", sheet = 3)
+knitr::kable(vulntbl, format = 'html', col.names = c("Purpose", "EO data", "Spatial resolution", "Temporal resolution", "Cost", "Processing"))
 ```
 
 ---
 
-# Themes
+## Additional data
 
-To use a theme, you can specify the `css` option as an array of CSS filenames (without the `.css` extensions), e.g.,
-
-```yaml
-output:
-  xaringan::moon_reader:
-    css: [default, metropolis, metropolis-fonts]
+```{r othertbl, echo=FALSE, message=FALSE}
+othertbl <- readxl::read_excel("img/eo-source-tables.xlsx", sheet = 4)
+knitr::kable(othertbl, format = 'html', col.names = c("Purpose", "Data", "Scale", "Cost"))
 ```
-
-If you want to contribute a theme to **xaringan**, please read [this blog post](https://yihui.org/en/2017/10/xaringan-themes).    
 
 ---
 
-class: center, middle
-
-# Thanks!
-
-Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
-
-The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
