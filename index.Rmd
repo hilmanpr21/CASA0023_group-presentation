@@ -51,11 +51,18 @@ All text under the three question marks are presentation notes; it is hidden fro
 
 # Methodology
 
-
-
-```{r image, echo=FALSE, out.width='130%', fig.align='center'}
+```{r method_img, echo=FALSE, out.width='130%', fig.align='center'}
 knitr::include_graphics('img/methodology-flowchart.png')
 ```
+
+---
+
+class: inverse, center, middle
+
+```{r riskmap_img, echo=FALSE, out.width='70%', fig.align='center'}
+knitr::include_graphics('img/risk-map-example.png')
+```
+
 
 
 ---
@@ -63,6 +70,8 @@ knitr::include_graphics('img/methodology-flowchart.png')
 # Methodology
 
 'Ensemble-based' Machine Learning approach
+
+--
 
 1. Using database of historic flood data, split into training (70%) and testing (30%) set  
 
@@ -115,6 +124,16 @@ hazardtbl <- readxl::read_excel("img/eo-source-tables.xlsx", sheet = 1)
 knitr::kable(hazardtbl, format = 'html', col.names = c("Purpose", "EO data", "Spatial resolution", "Temporal resolution", "Cost", "Processing"))
 ```
 
+???
+
+Data pre-processing except Correction and resampling ?  What is our smallest research scale?
+
+Tidal range is the term describing the vertical change between the maximum high tide and the minimum low tide and is related to tidal flooding.(Tidal range is the difference in height between high tide and low tide.)
+Indonesia Agency for Meteorology, Climatology, and Geophysics (BMKG)
+NOAA Jason-3  is capable of measuring significant wave height (radar altimeter), sigma naught (sigma0), dry and wet troposphere and ionosphere, which can be used to calculate sea surface height, sea surface height anomalies, and total electron content.
+A high rate of Sea Level Rise was designated to correspond to high coastal vulnerability and vice versa. 
+Significant Wave Height is a replacement of wave energy, it is the average of the highest one-third (33%) of waves (measured from trough to crest) that occur in a given period. Satellite altimetry was the primary data for extracting the significant wave high.
+
 ---
 
 class: middle, center
@@ -126,6 +145,14 @@ hazardtbl2 <- readxl::read_excel("img/eo-source-tables.xlsx", sheet = 2)
 knitr::kable(hazardtbl2, format = 'html', col.names = c("Purpose", "EO data", "Spatial resolution", "Temporal resolution", "Cost", "Processing"))
 ```
 
+???
+
+Reference Luca Brocca et al 2019
+The SM2RAIN–ASCAT data record is obtained from the application of the SM2RAIN algorithm to the ASCAT soil moisture data records H113 and H114 provided by the European Organisation for the Exploitation of Meteorological Satellites (EUMETSAT) https://essd.copernicus.org/articles/11/1583/2019/essd-11-1583-2019.html
+The Soil Moisture (SM) product provides an estimate of the water content of the 0-5 cm topsoil layer, expressed in degree of saturation between 0 and 100 [%]. SM processor.
+Land Subsidence and InSAR reference https://www.sciencedirect.com/science/article/pii/S0273117718300711
+
+
 ---
 
 # EO Data: Vulnerability
@@ -134,6 +161,14 @@ knitr::kable(hazardtbl2, format = 'html', col.names = c("Purpose", "EO data", "S
 vulntbl <- readxl::read_excel("img/eo-source-tables.xlsx", sheet = 3)
 knitr::kable(vulntbl, format = 'html', col.names = c("Purpose", "EO data", "Spatial resolution", "Temporal resolution", "Cost", "Processing"))
 ```
+
+???
+
+Reference V. H. R. Prudente et al 2020
+Normalized Difference Built-up Index, NDBI = (SWIR - NIR) / (SWIR + NIR), NDBI = (Band 6 - Band 5) / (Band 6 + Band 5)  in Landsat 8
+Normalized Difference Water Index, NDWI = (Green - NIR) / (Green + NIR), NDWI = (Band 3 – Band 5)/(Band 3 + Band 5)
+SAR satellite data can be helpful in LULC mapping in a tropical region with high cloud cover. https://ieeexplore.ieee.org/document/9323404
+Unmanned Aerial Vehicle Remote Sensing
 
 ---
 
@@ -145,4 +180,90 @@ knitr::kable(othertbl, format = 'html', col.names = c("Purpose", "Data", "Scale"
 ```
 
 ---
+
+# Recommended Action Plan
+
+```{r output_img, echo=FALSE, out.width='130%', fig.align='center'}
+knitr::include_graphics('img/output-flowchart.png')
+```
+
+???
+
+Climate is changing + informal settlement locations and densities may change rapidly. Maps and plan should be updated annually or every few years 
+Data should be available to all relevant stakeholders, so diff departments
+aren’t separately collecting data and planning with diff information
+
+Semarang resilience strategy has all these actions that they want to implement in locations that are prone to tidal floods, so with this map they can have a more updated idea of these target areas. One of their key goals is to increase coordination between stakeholders during disasters.
+
+Be specific link it without risk map.
+
+Use this data to make updates to Semarang’s disaster plan:
+Develop flood resistant infrastructure, such as roads, in high risk areas.
+Update evacuation plan.
+Improve drainage systems in high risk areas.
+If implementing an early detection warning system, prioritise placement of sensors in high risk areas.
+Create a task force to update risk assessment maps annually based on up-to-date data. Update disaster plan accordingly.
+Dashboard with risk and vulnerability map with population data; make this available across all relevant sectors - emergency response, health care, city operations.
+
+---
+
+# Resource Allocation
+
+```{r actiontbl_img, echo=FALSE, out.width='130%', fig.align='center'}
+knitr::include_graphics('img/action-table.png')
+```
+
+---
+
+class: inverse, center, middle
+
+# Plan
+
+---
+
+# Project Timeline
+
+```{r gantt_img, echo=FALSE, out.width='130%', fig.align='center'}
+knitr::include_graphics('img/gantt-chart.png')
+```
+
+---
+
+# Budget Breakdown
+
+**Need to insert table or screenshot**
+
+---
+
+# Risks and Limitations
+
+.pull-left[
+**Risk**
+
+- Unexpected employee turnover
+
+- Unexpectedly high costs
+
+- Political disruption
+
+- Disaster during assessment
+]
+
+.pull-right[
+**Mitigation**
+
+- Consistent data management for smooth transition
+
+- Allow for budget headroom
+
+- Active political monitoring and civil society engagement
+]
+
+---
+
+# Summary
+## Benefits to the City
+
+How much will Semarang save?
+
 
