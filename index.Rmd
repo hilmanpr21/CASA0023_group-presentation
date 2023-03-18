@@ -1,0 +1,171 @@
+---
+title: "Semarang Flood Resilience"
+subtitle: "CASA0023<br/>Group Project"
+author: "Hilman, Yuyang, Mindy, Guk, Joe"
+institute: "UCL CASA"
+date: "T2 2023"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+---
+class: inverse, center, middle
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(dplyr)
+library(readr)
+library(knitr)
+```
+
+```{r setupbibliography, include=FALSE}
+# Code supplied by Andy (see wk2 slides 25-28)
+library(RefManageR)
+library(knitcitations)
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear",
+           cite.style = "authoryear",
+           style = "markdown",
+           hyperlink = TRUE,
+           dashed = FALSE,
+           no.print.fields=c("doi", "url", "urldate", "issn"))
+myBib <- ReadBib("references.bib",
+                 # "./Bib.bib", 
+                 check = FALSE)
+```
+
+
+# Methodology
+
+???
+
+All text under the three question marks are presentation notes; it is hidden from the presentation slides and only available in presenter mode.
+
+---
+
+# Methodology
+
+
+
+```{r image, echo=FALSE, out.width='80%', fig.align='center'}
+knitr::include_graphics('img/methodology-flowchart.png')
+```
+
+
+---
+
+# Methodology
+
+'Ensemble-based' Machine Learning approach
+
+1. Using database of historic flood data, split into training (70%) and testing (30%) set  
+
+--
+
+1. Build a map (raster) of each hazard input parameter  
+
+--
+
+1. Estimate flood probability indices (Frequency Ratio Approach)  
+
+--
+
+1. Apply a Support Vector Machine (SVM) model, which will classify the input pixels   
+
+--
+
+1. Build a map (raster) of each vulnerability input parameter, classified on a quantile scale
+
+--
+
+1. Combine the hazard and vulnerability maps together to produce single risk index
+
+--
+
+1. Validate the model using testing set of data
+
+---
+
+# Hello World
+
+Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
+
+```{r eval=FALSE, tidy=FALSE}
+remotes::install_github("yihui/xaringan")
+```
+
+--
+
+You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rstudio/), but you do not have to.
+
+- Create a new R Markdown document from the menu `File -> New File -> R Markdown -> From Template -> Ninja Presentation`;<sup>1</sup>
+
+---
+
+# Hello Ninja
+
+As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
+
+1. The [remark.js](https://remarkjs.com) library;
+
+1. The **xaringan** package;
+
+Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
+
+---
+
+# Tables
+
+If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
+
+```{r}
+knitr::kable(head(iris), format = 'html')
+```
+
+---
+
+```{r eval=require('DT'), tidy=FALSE}
+DT::datatable(
+  head(iris, 10),
+  fillContainer = FALSE, options = list(pageLength = 8)
+)
+```
+
+---
+
+# Themes
+
+Don't want to learn CSS? Okay, you can use some user-contributed themes. A theme typically consists of two CSS files `foo.css` and `foo-fonts.css`, where `foo` is the theme name. Below are some existing themes:
+
+```{r, R.options=list(width = 70)}
+names(xaringan:::list_css())
+```
+
+---
+
+# Themes
+
+To use a theme, you can specify the `css` option as an array of CSS filenames (without the `.css` extensions), e.g.,
+
+```yaml
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts]
+```
+
+If you want to contribute a theme to **xaringan**, please read [this blog post](https://yihui.org/en/2017/10/xaringan-themes).    
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
