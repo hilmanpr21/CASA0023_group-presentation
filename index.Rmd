@@ -1,5 +1,5 @@
 ---
-title: "Semarang Flood Resilience"
+title: "Semarang Tidal Floods & Informal Settlements"
 subtitle: "CASA0023<br/>Group Project"
 author: "Hilman, Yuyang, Mindy, Guk, Joe"
 institute: "UCL CASA"
@@ -11,17 +11,39 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-
 ---
-class: inverse, center, middle
-
-
-```{r setup, include=FALSE}
+```{r setup, include=FALSE,echo=FALSE}
 options(htmltools.dir.version = FALSE)
 library(dplyr)
 library(readr)
 library(readxl)
 library(knitr)
+```
+
+```{r xaringan-all, echo=FALSE}
+library(countdown)
+library(xaringan)
+library(xaringanExtra)
+hook_source <- knitr::knit_hooks$get('source')
+knitr::knit_hooks$set(source = function(x, options) {
+  x <- stringr::str_replace(x, "^[[:blank:]]?([^*].+?)[[:blank:]]*#<<[[:blank:]]*$", "*\\1")
+  hook_source(x, options)
+})
+xaringanExtra::use_broadcast()
+xaringanExtra::use_freezeframe()
+xaringanExtra::use_scribble()
+#xaringanExtra::use_slide_tone()
+xaringanExtra::use_search(show_icon = TRUE, auto_search	=FALSE)
+xaringanExtra::use_freezeframe()
+xaringanExtra::use_clipboard()
+xaringanExtra::use_tile_view()
+xaringanExtra::use_panelset()
+xaringanExtra::use_editable(expires = 1)
+xaringanExtra::use_fit_screen()
+xaringanExtra::use_extra_styles(
+  hover_code_line = TRUE,         
+  mute_unhighlighted_code = TRUE  
+)
 ```
 
 ```{r setupbibliography, include=FALSE}
@@ -40,7 +62,194 @@ myBib <- ReadBib("references.bib",
                  check = FALSE)
 ```
 
+class: inverse, center, middle
 
+# Problem: Context & Background
+
+---
+class: center, middle
+
+
+.pull-left[
+```{r echo=FALSE, out.width='120%', fig.align='left'}
+knitr::include_graphics("img/s3_img1.png")
+```
+]
+.pull-right[
+```{r echo=FALSE, out.width='120%', fig.align='left'}
+knitr::include_graphics("img/s3_img2.png")
+```
+]
+
+Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
+
+---
+# Location
+
+
+- Capital city of Central Java, Indonesia
+
+- North of Semarang is located next to Java Sea which become the main port and access of food supply  for Central Java.
+
+- **Put more from the impact paper**
+
+```{r echo=FALSE, out.width='50%', fig.align='center'}
+knitr::include_graphics("img/s4_map.png")
+```
+
+---
+# Problem Statement
+
+- 20 villages on 7 districts on coastal areas are suffering from tidal flood every year because the increase of sea level, coastal abrasion, and land subsidence (citation: Ketangguhan Kota - Semarang dalam Menghadapi Bencana Banjir Pasang Air Laut (Rob))
+
+- Semarang sinks up to 15cm/year due to  the increase of population density and  declination of groundwater
+
+.pull-left[
+```{r echo=FALSE, out.width='70%', fig.align='left'}
+knitr::include_graphics("img/s5_map1.png")
+```
+]
+
+.pull-right[
+```{r echo=FALSE, out.width='70%', fig.align='left'}
+knitr::include_graphics("img/s5_map3.png")
+```
+]
+
+Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
+
+---
+#Impact
+.panelset[
+.panel[.panel-name[Social]
+
+- Around 1660 Ha area flooded with 72,903 people living within those area 
+- Water supply and electricity cannot be utilized 
+- Disruption of household activity 
+- High exposure to illness, such as, diarrhea, fever, and malaria 
+- Disruption of transportation access
+- Causing isolated residential area
+- Damage of production area (ie fishpond and rice field)
+]
+
+.panel[.panel-name[Economic]
+- Loss IDR 144 Billion/year (£7,714,513/year) because of the environmental damage, such as: (citation: KAJIAN PEMANFAATAN DEM SRTM & GOOGLE EARTH UNTUK PARAMETER PENILAIAN POTENSI KERUGIAN EKONOMI AKIBAT BANJIR ROB)
+  - Production land damage (fishpond, and rice field)
+  - Housing damage
+  - Infrastructure damage
+- Spend IDR 14,209,324,000/year (£761,236/year) to handle waste  (citation: introduction study of tidal flood waste management cost)
+]
+
+.panel[.panel-name[Environmental]
+Around  70 tons of waste generated (per year?)
+
+```{r, echo=FALSE, message= FALSE}
+library(readxl)
+x <- read_excel('img/asset.xlsx')
+library(tidyverse) #where the mpg data is stored
+```
+
+```{r, echo=FALSE}
+knitr::kable(head(x), format = 'html')
+```
+]
+]
+
+Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
+
+---
+# UN Sustainable Development Goals
+
+
+.pull-left[
+
+```{r echo=FALSE, out.width='50%', fig.align='center'}
+knitr::include_graphics("img/sdg11.png")
+```
+
+**Raise Housing standards, inclusive urbanisation, disaster planning and mitigation**
+
+% urban population in informal settlements
+
+% of cities with civil society planning input
+
+Disaster-related economic, infrastructure and life loss
+
+]
+
+.pull-right[
+
+```{r echo=FALSE, out.width='50%', fig.align='center'}
+knitr::include_graphics("img/sdg13.png")
+```
+
+**Build resilience, climate change planning in LDCs **
+
+Sendai Framework implementation
+
+% local government in line with national risk disaster reduction strategies
+
+Contributions, strategies, plans and communications reported to UNFCCC
+
+]
+---
+
+# Current Semarang Resilience Strategy
+### 3rd Pillar Strategy: Preparedness for Disaster and Disease Outbreak
+
+
+**A Developing Technology for Disaster Management**
+
+Raise Public Awareness on Disaster-Prone Areas
+Explore Alternative Methods to Prevent Dengue Fever
+Explore New Technology in Disaster Management
+
+**B Enhancing Capacity of Stakeholders in Disaster and Disease Management**
+
+Replicate Disaster Preparedness Groups in Disaster Prone Areas
+Improve A Community- Based Sanitation System
+Increase capacity of stakeholder in facing Disaster and Diseases Outbreaks
+
+**C Improve Coordination in Disaster Risk Reduction**
+Prepare Participatory Contingency Plan
+
+```{r echo=FALSE, out.width='30%', fig.align='center'}
+knitr::include_graphics("img/100res.jpg")
+```
+---
+class: inverse, center, middle
+
+##Unclear what information is used to guide responses.
+
+---
+#Compliance to Sendai Framework for Disaster Risk Reduction 
+
+**Priority 1: Understanding disaster risk**
+
+Policies and practices for disaster risk management should be based on vulnerability, capacity, exposure of persons and assets, hazard characteristics and the environment
+
+- Knowledge can be used for **pre-disaster risk assessment**, prevention, mitigation and for the development and implementation effective response to disasters.
+
+- To develop, periodically update and disseminate location-based disaster risk information including **risk maps** to decision makers, the public and at-risk communities in an appropriate format by using **geospatial information technology**; and
+
+- To promote real time access to data, make use of space and in situ information including **GIS** and use IT innovations to enhance measurement tools and the **collection, analysis and dissemination of data**.
+---
+#Case Study
+
+---
+#Approach
+
+```{r echo=FALSE, out.width='140%', fig.align='center'}
+knitr::include_graphics("img/flow_journey.png")
+```
+---
+#Approach
+
+```{r echo=FALSE, out.width='140%', fig.align='center'}
+knitr::include_graphics("img/flow_journey2.png")
+```
+
+---
 # Methodology
 
 ???
