@@ -32,7 +32,7 @@ style_duo_accent(primary_color = "#0D5E74", secondary_color = "#2881C6",
 )
 ```
 
-```{r xaringan-all, echo=FALSE}
+```{r xaringan-all, echo=FALSE, warning=FALSE}
 library(countdown)
 library(xaringan)
 library(xaringanExtra)
@@ -329,27 +329,15 @@ knitr::include_graphics('img/risk-map-example.png')
 
 1. Using database of historic flood data, split into training (70%) and testing (30%) set  
 
---
-
 1. Build a map (raster) of each hazard input parameter  
-
---
 
 1. Estimate flood probability indices (Frequency Ratio Approach)  
 
---
-
 1. Apply a Support Vector Machine (SVM) model, which will classify the input pixels   
-
---
 
 1. Build a map (raster) of each vulnerability input parameter, classified on a quantile scale
 
---
-
 1. Combine the hazard and vulnerability maps together to produce single risk index
-
---
 
 1. Validate the model using testing set of data
 
@@ -485,7 +473,10 @@ knitr::include_graphics('img/gantt-chart.png')
 
 # Budget Breakdown
 
-**Need to insert table or screenshot**
+```{r budget_img, echo=FALSE, out.width='130%', fig.align='center'}
+knitr::include_graphics('img/budget-table.png')
+```
+
 
 ---
 
