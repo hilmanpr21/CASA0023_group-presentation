@@ -25,7 +25,8 @@ library(knitr)
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 library(xaringanthemer)
-style_duo_accent(primary_color = "#0D5E74", secondary_color = "#2881C6",
+style_duo_accent(primary_color = "#0D5E74", 
+                 # secondary_color = "#2881C6",
   header_font_google = google_font("Josefin Sans"),
   text_font_google   = google_font("Montserrat", "300", "300i"),
   code_font_google   = google_font("Fira Mono"),
@@ -495,8 +496,9 @@ knitr::include_graphics('img/budget-table.png')
 
 ---
 
+class: centre, inverse, middle
 # Summary
-## Benefits to the City
 
-How much will Semarang save?
+
+
 
