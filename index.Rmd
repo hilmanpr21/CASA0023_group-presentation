@@ -265,18 +265,22 @@ Policies and practices for disaster risk management should be based on vulnerabi
 #Case Study
 
 ### Dar es Salaam, Tanzania
-Widespread flooding and informal settlement and affected 50,000 people, costing local Government more than $780,000 in recovery and emergency response.
+Widespread flooding and informal settlement
+50,000 affected, + $780,000 in recovery and emergency response.
+.pull-left[
+Community risk mapping project led by the World Bank and other Tanzanian NGOs 
+* Identified substantial geospatial information including landuse, infrastructure and exposure data
+* 3.5 million residents in over 228 communities mapped within 3 years.
 
-In response, the World Bank and other Tanzanian NGOs began a community risk mapping project and identified substantial geospatial information including landuse, infrastructure and exposure data. Within 3 years, over 3.5 million residents in over 228 communities have been mapped.
+Information drove city-wide, multistakeholder initiative to generate regional level response and planning for disaster [Global Assessment Report, 2019](https://gar.undrr.org/chapters/chapter-9-review-efforts-made-member-states-implement-sendai-framework.html#Specialcasestudy).
+]
 
-This information then informed the city-wide, multistakeholder initiative to generate regional level response and planning for disaster.
-
-```{r echo=FALSE, out.width='30%', fig.align='center'}
+.pull-right[
+```{r echo=FALSE, out.width='90%', fig.align='right'}
 knitr::include_graphics("img/casestudy_tanzania.jpeg")
 ```
-
+]
 Image credit: [Ubuntu Times](https://www.ubuntutimes.com/poor-infrastructures-rapid-urban-sprawl-increase-flood-risk-in-tanzanias-largest-city/)
-
 ---
 #Approach
 
