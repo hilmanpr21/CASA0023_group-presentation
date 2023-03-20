@@ -117,8 +117,6 @@ Image credit: [Merah Putih](https://merahputih.com/post/read/banjir-rob-genangi-
 
 - North of Semarang is located next to Java Sea which become the main port and access of food supply  for Central Java.
 
-- **Put more from the impact paper**
-
 ```{r echo=FALSE, out.width='50%', fig.align='center'}
 knitr::include_graphics("img/s4_map.png")
 ```
@@ -132,17 +130,11 @@ Source: [Dameria et al. 2022](https://www.researchgate.net/publication/357859602
 
 - Semarang sinks up to 15cm/year due to  the increase of population density and  declination of groundwater
 
-.pull-left[
-```{r echo=FALSE, out.width='70%', fig.align='left'}
-knitr::include_graphics("img/s5_map1.png")
+```{r echo=FALSE, out.width='100%', fig.align='center'}
+knitr::include_graphics("img/s5_mapall.png")
 ```
-]
 
-.pull-right[
-```{r echo=FALSE, out.width='70%', fig.align='left'}
-knitr::include_graphics("img/s5_map3.png")
-```
-]
+
 
 Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
 
@@ -304,20 +296,17 @@ All text under the three question marks are presentation notes; it is hidden fro
 ---
 
 # Methodology
-
 ```{r method_img, echo=FALSE, out.width='130%', fig.align='center'}
 knitr::include_graphics('img/methodology-flowchart.png')
 ```
 
 ---
-
 class: inverse, center, middle
+### Example output: Bivariate map
 
 ```{r riskmap_img, echo=FALSE, out.width='70%', fig.align='center'}
-knitr::include_graphics('img/risk-map-example.png')
+knitr::include_graphics('img/bivariate.jpeg')
 ```
-
-
 
 ---
 
