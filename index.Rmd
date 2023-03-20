@@ -6,11 +6,14 @@ institute: "UCL CASA"
 date: "T2 2023"
 output:
   xaringan::moon_reader:
+    css: [xaringan-themer.css, custom.css]
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
+      ratio: 16:10
       countIncrementalSlides: false
+    seal: false
 ---
 ```{r setup, include=FALSE,echo=FALSE}
 options(htmltools.dir.version = FALSE)
@@ -18,6 +21,15 @@ library(dplyr)
 library(readr)
 library(readxl)
 library(knitr)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(primary_color = "#0D5E74", secondary_color = "#2881C6",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Fira Mono"),
+)
 ```
 
 ```{r xaringan-all, echo=FALSE}
@@ -62,6 +74,19 @@ myBib <- ReadBib("references.bib",
                  check = FALSE)
 ```
 
+class: center, title-slide, middle
+
+background-image: url("img/semarang_cover.jpeg")
+background-size: cover
+background-position: center
+
+# Semarang Tidal Floods & Informal Settlements
+## CASA0023<br/>Group Project
+### Hilman et al.
+
+### `r format(Sys.time(), "%d/%m/%Y")`
+
+---
 class: inverse, center, middle
 
 # Problem: Context & Background
@@ -235,6 +260,19 @@ Policies and practices for disaster risk management should be based on vulnerabi
 - To promote real time access to data, make use of space and in situ information including **GIS** and use IT innovations to enhance measurement tools and the **collection, analysis and dissemination of data**.
 ---
 #Case Study
+
+### Dar es Salaam, Tanzania
+Widespread flooding and informal settlement and affected 50,000 people, costing local Government more than $780,000 in recovery and emergency response.
+
+In response, the World Bank and other Tanzanian NGOs began a community risk mapping project and identified substantial geospatial information including landuse, infrastructure and exposure data. Within 3 years, over 3.5 million residents in over 228 communities have been mapped.
+
+This information then informed the city-wide, multistakeholder initiative to generate regional level response and planning for disaster.
+
+```{r echo=FALSE, out.width='30%', fig.align='center'}
+knitr::include_graphics("img/casestudy_tanzania.jpeg")
+```
+
+Image credit: [Ubuntu Times](https://www.ubuntutimes.com/poor-infrastructures-rapid-urban-sprawl-increase-flood-risk-in-tanzanias-largest-city/)
 
 ---
 #Approach
