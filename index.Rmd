@@ -161,7 +161,7 @@ Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharin
 ]
 
 .panel[.panel-name[Environmental]
-Around  70 tons of waste generated (per year?)
+Around  70 tons of waste generated per year
 
 ```{r, echo=FALSE, message= FALSE}
 library(readxl)
