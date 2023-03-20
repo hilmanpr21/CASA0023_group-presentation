@@ -106,7 +106,8 @@ knitr::include_graphics("img/s3_img2.png")
 ```
 ]
 
-Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
+Image credit: [Merah Putih](https://merahputih.com/post/read/banjir-rob-genangi-sejumlah-wilayah-pesisir-di-semarang), [Merdekah](https://www.merdeka.com/jateng/5-fakta-banjir-rob-semarang-ketinggian-air-capai-15-meter.html)
+
 
 ---
 # Location
@@ -121,6 +122,8 @@ Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharin
 ```{r echo=FALSE, out.width='50%', fig.align='center'}
 knitr::include_graphics("img/s4_map.png")
 ```
+
+Source: [Dameria et al. 2022](https://www.researchgate.net/publication/357859602_The_relationship_between_residents'_sense_of_place_and_sustainable_heritage_behaviour_in_Semarang_Old_Town_Indonesia)
 
 ---
 # Problem Statement
@@ -180,7 +183,7 @@ knitr::kable(head(x), format = 'html')
 ]
 ]
 
-Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
+Source: [Rahma et al. (2019) ](https://www.e3s-conferences.org/articles/e3sconf/pdf/2019/51/e3sconf_icenis2019_07020.pdf)
 
 ---
 # UN Sustainable Development Goals
@@ -512,5 +515,4 @@ knitr::include_graphics('img/gantt-chart.png')
 ## Benefits to the City
 
 How much will Semarang save?
-
 
