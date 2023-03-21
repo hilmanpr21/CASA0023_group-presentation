@@ -95,6 +95,8 @@ class: inverse, center, middle
 ---
 class: center, middle
 
+## Semarang suffers from tidal floods every year
+
 
 .pull-left[
 ```{r echo=FALSE, out.width='120%', fig.align='left'}
@@ -114,9 +116,9 @@ Image credit: [Merah Putih](https://merahputih.com/post/read/banjir-rob-genangi-
 # Location
 
 
-- Capital city of Central Java, Indonesia
+- Semarang is capital city of Central Java, Indonesia
 
-- North of Semarang is located next to Java Sea which become the main port and access of food supply  for Central Java.
+- **North of Semarang is located next to Java Sea** which become the main port and access of food supply  for Central Java.
 
 ```{r echo=FALSE, out.width='50%', fig.align='center'}
 knitr::include_graphics("img/s4_map.png")
@@ -127,9 +129,9 @@ Source: `r Citet(myBib, "dameriaRelationshipResidentsSense2022")`
 ---
 # Problem Statement
 
-- 20 villages on 7 districts on coastal areas are suffering from tidal flood every year because the increase of sea level, coastal abrasion, and land subsidence
+- **20 residential areas** on **7 districts** on coastal areas are suffering from **tidal flood every year** because the **increase of sea level, coastal abrasion, and land subsidence**
 
-- Semarang sinks up to 15cm/year due to  the increase of population density and  declination of groundwater
+- Semarang sinks up to **15cm/year** due to  the increase of **population density** and **declination of groundwater**
 
 ```{r echo=FALSE, out.width='100%', fig.align='center'}
 knitr::include_graphics("img/s5_mapall.png")
@@ -144,17 +146,17 @@ Source: `r Citet(myBib, "riaerlaniKetangguhanKotaSemarang2019", .opts = list(max
 .panelset[
 .panel[.panel-name[Social]
 
-- Around 1660 Ha area flooded with 72,903 people living within those area 
+- Around **1660 Ha** area flooded with **72,903 people** living within those area 
 - Water supply and electricity cannot be utilized 
 - Disruption of household activity 
 - High exposure to illness, such as, diarrhea, fever, and malaria 
 - Disruption of transportation access
-- Causing isolated residential area
+- Causing **isolated residential area**
 - Damage of production area (ie fishpond and rice field)
 ]
 
 .panel[.panel-name[Environmental]
-Around  70 tons of waste generated per year
+Around  **70 tons of waste** generated per year
 
 ```{r, echo=FALSE, message= FALSE, warning=FALSE}
 library(readxl)
@@ -168,8 +170,8 @@ knitr::kable(head(x), format = 'html')
 ]
 
 .panel[.panel-name[Economic]
-- Spend £761,236/year to handle waste `r Citep(myBib, "rahmaIntroductionStudyTidal2019")`
-- Loss of £7,714,513/year because of the environmental damage, such as `r Citep(myBib, "nugrahaKAJIANPEMANFAATANSRTM2013")`: 
+- Spend **£761,236/year** to **handle waste** `r Citep(myBib, "rahmaIntroductionStudyTidal2019")`
+- Loss of **£7,714,513/year** because of the **environmental damage**, such as `r Citep(myBib, "nugrahaKAJIANPEMANFAATANSRTM2013")`: 
   - Production land damage (fishpond, and rice field)
   - Housing damage
   - Infrastructure damage
