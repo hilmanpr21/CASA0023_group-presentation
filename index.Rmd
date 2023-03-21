@@ -324,19 +324,19 @@ knitr::include_graphics('img/bivariate.jpeg')
 
 --
 
-1. Using database of historic flood data, split into training (70%) and testing (30%) set  
+1. Using database of historic flood data, split into **training (70%) and testing (30%)** set  
 
 1. Build a map (raster) of each hazard input parameter  
 
-1. Estimate flood probability indices (Frequency Ratio Approach)  
+1. Estimate flood **probability indices** (Frequency Ratio Approach)  
 
-1. Apply a Support Vector Machine (SVM) model, which will classify the input pixels   
+1. Apply a **Support Vector Machine (SVM)** model, which will **classify** the input pixels   
 
 1. Build a map (raster) of each vulnerability input parameter, classified on a quantile scale
 
-1. Combine the hazard and vulnerability maps together to produce a bivariate risk map
+1. **Combine** the hazard and vulnerability maps together to produce a bivariate risk map
 
-1. Validate the model using testing set of data
+1. **Validate** the model using testing set of data
 
 Based off approaches developed by `r Citet(myBib, "taubenbockFloodRisksUrbanized2011", .opts = list(max.names=1, longnamesfirst = FALSE))`, `r Citet(myBib, "mojaddadiEnsembleMachinelearningbasedGeospatial2017", .opts = list(max.names=1, longnamesfirst = FALSE))`, `r Citet(myBib, "tehranyFloodSusceptibilityMapping2014", .opts = list(max.names=1, longnamesfirst = FALSE))`.
 
@@ -364,6 +364,11 @@ class: middle, center
 hazardtbl <- readxl::read_excel("img/eo-source-tables.xlsx", sheet = 1)
 knitr::kable(hazardtbl, format = 'html', col.names = c("Purpose", "EO data", "Spatial resolution", "Temporal resolution", "Cost", "Processing"))
 ```
+
+Significant wave height (`r Citep(myBib, "shahidiTwoNewMethods2020", .opts = list(max.names=1, longnamesfirst = FALSE))`): 
+$$
+E=\frac{1}{8}pgH^2
+$$
 
 ???
 
@@ -513,19 +518,19 @@ class: centre, inverse, middle
 
 # Summary
 
-Semarang already had resilience strategy to face their annual tidal flood. However, the strategy is not clear on what information is used.
+**Semarang** already had **resilience strategy** to face their annual tidal flood. However, the **strategy is not clear** on what information is used.
 
-Thus, we propose our project to increase stakeholder engagement by utilising geospatial technology.
+Thus, we propose our project to increase stakeholder engagement by **utilising geospatial technology**.
 
 Impact of this project: 
 
-- Generate data driven policy and information
+- Generate **data driven policy and information**
 
-- Raise awareness of the local community
+- **Raise awareness** of the local community
 
-- Save money on recovery and emergency response 
+- **Save money** on recovery and emergency response 
 
-- And make Semarang’s strategy more tangible and feasible
+- And make **Semarang’s strategy** more **tangible and feasible**
 
 ---
 
@@ -533,7 +538,7 @@ Impact of this project:
 
 ```{r bibliography, results='asis', echo=FALSE, warning=FALSE}
 PrintBibliography(myBib
-                  , start = 1, end = 5
+                  , start = 1, end = 6
                   )
 ```
 
@@ -543,6 +548,6 @@ PrintBibliography(myBib
 
 ```{r bibliography2, results='asis', echo=FALSE, warning=FALSE}
 PrintBibliography(myBib
-                  , start = 5, end = 10
+                  , start = 7, end = 15
                   )
 ```

@@ -29,7 +29,7 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"f5580d990ab54a9093f86affc0ed5dbf","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x0531a29f0e9477b90b5731e0ccfc0a0","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
     <script src="libs/editable/editable.js"></script>
@@ -297,19 +297,19 @@ class: inverse, center, middle
 
 --
 
-1. Using database of historic flood data, split into training (70%) and testing (30%) set  
+1. Using database of historic flood data, split into **training (70%) and testing (30%)** set  
 
 1. Build a map (raster) of each hazard input parameter  
 
-1. Estimate flood probability indices (Frequency Ratio Approach)  
+1. Estimate flood **probability indices** (Frequency Ratio Approach)  
 
-1. Apply a Support Vector Machine (SVM) model, which will classify the input pixels   
+1. Apply a **Support Vector Machine (SVM)** model, which will **classify** the input pixels   
 
 1. Build a map (raster) of each vulnerability input parameter, classified on a quantile scale
 
-1. Combine the hazard and vulnerability maps together to produce a bivariate risk map
+1. **Combine** the hazard and vulnerability maps together to produce a bivariate risk map
 
-1. Validate the model using testing set of data
+1. **Validate** the model using testing set of data
 
 Based off approaches developed by &lt;a name=cite-taubenbockFloodRisksUrbanized2011&gt;&lt;/a&gt;[Taubenböck et al. (2011)](#bib-taubenbockFloodRisksUrbanized2011), &lt;a name=cite-mojaddadiEnsembleMachinelearningbasedGeospatial2017&gt;&lt;/a&gt;[Mojaddadi et al. (2017)](#bib-mojaddadiEnsembleMachinelearningbasedGeospatial2017), &lt;a name=cite-tehranyFloodSusceptibilityMapping2014&gt;&lt;/a&gt;[Tehrany et al. (2014)](#bib-tehranyFloodSusceptibilityMapping2014).
 
@@ -379,6 +379,11 @@ class: middle, center
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+Significant wave height (&lt;a name=cite-shahidiTwoNewMethods2020&gt;&lt;/a&gt;([Shahidi et al., 2020](#bib-shahidiTwoNewMethods2020))): 
+$$
+E=\frac{1}{8}pgH^2
+$$
 
 ???
 
@@ -616,19 +621,19 @@ class: centre, inverse, middle
 
 # Summary
 
-Semarang already had resilience strategy to face their annual tidal flood. However, the strategy is not clear on what information is used.
+**Semarang** already had **resilience strategy** to face their annual tidal flood. However, the **strategy is not clear** on what information is used.
 
-Thus, we propose our project to increase stakeholder engagement by utilising geospatial technology.
+Thus, we propose our project to increase stakeholder engagement by **utilising geospatial technology**.
 
 Impact of this project: 
 
-- Generate data driven policy and information
+- Generate **data driven policy and information**
 
-- Raise awareness of the local community
+- **Raise awareness** of the local community
 
-- Save money on recovery and emergency response 
+- **Save money** on recovery and emergency response 
 
-- And make Semarang’s strategy more tangible and feasible
+- And make **Semarang’s strategy** more **tangible and feasible**
 
 ---
 
@@ -665,21 +670,15 @@ Maryono, and W. Widjanarko](#cite-rahmaIntroductionStudyTidal2019)
 North Semarang Sub-District". In: _E3S Web of Conferences_ 125, p.
 07020.
 
----
-
-# References (cont.)
-
-&lt;a name=bib-rahmaIntroductionStudyTidal2019&gt;&lt;/a&gt;[Rahma, N. N., M.
-Maryono, and W. Widjanarko](#cite-rahmaIntroductionStudyTidal2019)
-(2019). "Introduction Study of Tidal Flood Waste Management Cost in
-North Semarang Sub-District". In: _E3S Web of Conferences_ 125, p.
-07020.
-
 &lt;a name=bib-riaerlaniKetangguhanKotaSemarang2019&gt;&lt;/a&gt;[Ria Erlani and W.
 H. Nugrahandika](#cite-riaerlaniKetangguhanKotaSemarang2019) (2019).
 "Ketangguhan Kota Semarang Dalam Menghadapi Bencana Banjir Pasang Air
 Laut (Rob)". In: _Journal of Regional and Rural Development Planning_
 3.1, p. 47.
+
+---
+
+# References (cont.)
 
 &lt;a
 name=bib-semarangcitygovernmentResilientSemarangMoving2016&gt;&lt;/a&gt;[Semarang
@@ -687,6 +686,12 @@ City
 Government](#cite-semarangcitygovernmentResilientSemarangMoving2016)
 (2016). _Resilient Semarang: Moving Together towards a Resilient
 Semarang_. Semarang, Indonesia.
+
+&lt;a name=bib-shahidiTwoNewMethods2020&gt;&lt;/a&gt;[Shahidi, R. and E. W.
+Gill](#cite-shahidiTwoNewMethods2020) (2020). "Two New Methods for the
+Extraction of Significant Wave Heights From Received HF-Radar Time
+Series". In: _IEEE Geoscience and Remote Sensing Letters_ 17.12, pp.
+2070-2074.
 
 &lt;a name=bib-taubenbockFloodRisksUrbanized2011&gt;&lt;/a&gt;[Taubenböck, H., M.
 Wurm, M. Netzband, et al.](#cite-taubenbockFloodRisksUrbanized2011)
@@ -706,6 +711,13 @@ Nations Office for Disaster Risk
 Reduction](#cite-unitednationsofficefordisasterriskreductionSendaiFrameworkDisaster2015)
 (2015). _Sendai Framework for Disaster Risk Reduction 2015-2030_.
 UNDRR.
+
+&lt;a name=bib-widadaDistributianDepthClaySilt2019&gt;&lt;/a&gt;[Widada, S., M.
+Zainuri, G. Yulianto, et
+al.](#cite-widadaDistributianDepthClaySilt2019) (2019). "Distributian
+of Depth and Clay-Silt to Sand Ratio of Land Subsidence in Coastal
+Semarang City by Resistivity Methods". In: _Jurnal Kelautan Tropis_ 22,
+p. 63.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
