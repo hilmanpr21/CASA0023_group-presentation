@@ -265,8 +265,7 @@ Source: `r Citet(myBib, "unitednationsofficefordisasterriskreductionSendaiFramew
 ### Dar es Salaam, Tanzania
 Widespread flooding and informal settlement
 50,000 affected, + $780,000 in recovery and emergency response.
-.pull-left[
-Community risk mapping project led by the World Bank and other Tanzanian NGOs 
+Community risk mapping project led by the World Bank and other Tanzanian NGOs   
 
 
 .pull-left[
@@ -523,6 +522,8 @@ Impact of this project:
 - Generate data driven policy and information
 
 - Raise awareness of the local community
+
+- Save money on recovery and emergency response 
 
 - And make Semarang’s strategy more tangible and feasible
 
