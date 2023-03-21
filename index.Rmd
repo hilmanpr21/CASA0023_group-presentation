@@ -127,7 +127,7 @@ Source: `r Citet(myBib, "dameriaRelationshipResidentsSense2022")`
 ---
 # Problem Statement
 
-- 20 villages on 7 districts on coastal areas are suffering from tidal flood every year because the increase of sea level, coastal abrasion, and land subsidence (citation: Ketangguhan Kota - Semarang dalam Menghadapi Bencana Banjir Pasang Air Laut (Rob))
+- 20 villages on 7 districts on coastal areas are suffering from tidal flood every year because the increase of sea level, coastal abrasion, and land subsidence
 
 - Semarang sinks up to 15cm/year due to  the increase of population density and  declination of groundwater
 
@@ -137,7 +137,7 @@ knitr::include_graphics("img/s5_mapall.png")
 
 
 
-Source: `r Citet(myBib, "gultomFenomenaBanjirRob2018")`
+Source: `r Citet(myBib, "riaerlaniKetangguhanKotaSemarang2019", .opts = list(max.names=1, longnamesfirst = FALSE))`, `r Citet(myBib, "widadaDistributianDepthClaySilt2019", .opts = list(max.names=1, longnamesfirst = FALSE))`, `r Citet(myBib, "marfaiImpactTidalFlooding2008", .opts = list(max.names=1, longnamesfirst = FALSE))`
 
 ---
 #Impact
