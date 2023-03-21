@@ -513,7 +513,16 @@ class: centre, inverse, middle
 
 ```{r bibliography, results='asis', echo=FALSE, warning=FALSE}
 PrintBibliography(myBib
-                  # , start = 1, end = 7
+                  , start = 1, end = 5
                   )
 ```
 
+---
+
+# References (cont.)
+
+```{r bibliography2, results='asis', echo=FALSE, warning=FALSE}
+PrintBibliography(myBib
+                  , start = 5, end = 10
+                  )
+```
