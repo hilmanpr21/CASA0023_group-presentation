@@ -267,18 +267,21 @@ Widespread flooding and informal settlement
 50,000 affected, + $780,000 in recovery and emergency response.
 .pull-left[
 Community risk mapping project led by the World Bank and other Tanzanian NGOs 
+
+
+.pull-left[
 * Identified substantial geospatial information including landuse, infrastructure and exposure data
 * 3.5 million residents in over 228 communities mapped within 3 years.
-
-Information drove city-wide, multistakeholder initiative to generate regional level response and planning for disaster [Global Assessment Report, 2019](https://gar.undrr.org/chapters/chapter-9-review-efforts-made-member-states-implement-sendai-framework.html#Specialcasestudy).
+Flood protective measures could unlock up to $900 million of real estate investments including $200 million of new revenue to the city through the construction of up to 5,900 new housing units.
 ]
 
 .pull-right[
 ```{r echo=FALSE, out.width='90%', fig.align='right'}
 knitr::include_graphics("img/casestudy_tanzania.jpeg")
 ```
-]
 Image credit: [Ubuntu Times](https://www.ubuntutimes.com/poor-infrastructures-rapid-urban-sprawl-increase-flood-risk-in-tanzanias-largest-city/)
+]
+
 ---
 #Approach
 
@@ -506,6 +509,22 @@ knitr::include_graphics('img/budget-table.png')
 class: centre, inverse, middle
 # Summary
 
+
+---
+
+# Summary
+
+Semarang already had resilience strategy to face their annual tidal flood. However, the strategy is not clear on what information is used.
+
+Thus, we propose our project to increase stakeholder engagement by utilising geospatial technology.
+
+Impact of this project: 
+
+- Generate data driven policy and information
+
+- Raise awareness of the local community
+
+- And make Semarang’s strategy more tangible and feasible
 
 ---
 
