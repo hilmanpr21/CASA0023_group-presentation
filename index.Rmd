@@ -168,11 +168,11 @@ knitr::kable(head(x), format = 'html')
 ]
 
 .panel[.panel-name[Economic]
-- Loss IDR 144 Billion/year (£7,714,513/year) because of the environmental damage, such as: (citation: KAJIAN PEMANFAATAN DEM SRTM & GOOGLE EARTH UNTUK PARAMETER PENILAIAN POTENSI KERUGIAN EKONOMI AKIBAT BANJIR ROB)
+- Spend £761,236/year to handle waste `r Citep(myBib, "rahmaIntroductionStudyTidal2019")`
+- Loss of £7,714,513/year because of the environmental damage, such as `r Citep(myBib, "nugrahaKAJIANPEMANFAATANSRTM2013")`: 
   - Production land damage (fishpond, and rice field)
   - Housing damage
   - Infrastructure damage
-- Spend IDR 14,209,324,000/year (£761,236/year) to handle waste `r Citep(myBib, "rahmaIntroductionStudyTidal2019")`
 ]
 ]
 
