@@ -122,7 +122,7 @@ Image credit: [Merah Putih](https://merahputih.com/post/read/banjir-rob-genangi-
 knitr::include_graphics("img/s4_map.png")
 ```
 
-Source: [Dameria et al. 2022](https://www.researchgate.net/publication/357859602_The_relationship_between_residents'_sense_of_place_and_sustainable_heritage_behaviour_in_Semarang_Old_Town_Indonesia)
+Source: `r Citet(myBib, "dameriaRelationshipResidentsSense2022")`
 
 ---
 # Problem Statement
@@ -158,7 +158,7 @@ Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharin
   - Production land damage (fishpond, and rice field)
   - Housing damage
   - Infrastructure damage
-- Spend IDR 14,209,324,000/year (£761,236/year) to handle waste  (citation: introduction study of tidal flood waste management cost)
+- Spend IDR 14,209,324,000/year (£761,236/year) to handle waste `r Citep(myBib, "rahmaIntroductionStudyTidal2019")`
 ]
 
 .panel[.panel-name[Environmental]
@@ -176,7 +176,7 @@ knitr::kable(head(x), format = 'html')
 ]
 ]
 
-Source: [Rahma et al. (2019) ](https://www.e3s-conferences.org/articles/e3sconf/pdf/2019/51/e3sconf_icenis2019_07020.pdf)
+Source: `r Citet(myBib, "rahmaIntroductionStudyTidal2019")`
 
 ---
 # UN Sustainable Development Goals
@@ -330,6 +330,8 @@ knitr::include_graphics('img/bivariate.jpeg')
 1. Combine the hazard and vulnerability maps together to produce single risk index
 
 1. Validate the model using testing set of data
+
+Based off approaches developed by `r Citet(myBib, "taubenbockFloodRisksUrbanized2011", .opts = list(max.names=1, longnamesfirst = FALSE))`, `r Citet(myBib, "mojaddadiEnsembleMachinelearningbasedGeospatial2017", .opts = list(max.names=1, longnamesfirst = FALSE))`, `r Citet(myBib, "tehranyFloodSusceptibilityMapping2014", .opts = list(max.names=1, longnamesfirst = FALSE))`.
 
 ???
 Presenter Notes
@@ -500,5 +502,13 @@ class: centre, inverse, middle
 # Summary
 
 
+---
 
+# References
+
+```{r bibliography, results='asis', echo=FALSE, warning=FALSE}
+PrintBibliography(myBib
+                  # , start = 1, end = 7
+                  )
+```
 
