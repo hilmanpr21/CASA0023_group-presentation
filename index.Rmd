@@ -137,7 +137,7 @@ knitr::include_graphics("img/s5_mapall.png")
 
 
 
-Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
+Source: `r Citet(myBib, "gultomFenomenaBanjirRob2018")`
 
 ---
 #Impact
@@ -153,14 +153,6 @@ Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharin
 - Damage of production area (ie fishpond and rice field)
 ]
 
-.panel[.panel-name[Economic]
-- Loss IDR 144 Billion/year (£7,714,513/year) because of the environmental damage, such as: (citation: KAJIAN PEMANFAATAN DEM SRTM & GOOGLE EARTH UNTUK PARAMETER PENILAIAN POTENSI KERUGIAN EKONOMI AKIBAT BANJIR ROB)
-  - Production land damage (fishpond, and rice field)
-  - Housing damage
-  - Infrastructure damage
-- Spend IDR 14,209,324,000/year (£761,236/year) to handle waste `r Citep(myBib, "rahmaIntroductionStudyTidal2019")`
-]
-
 .panel[.panel-name[Environmental]
 Around  70 tons of waste generated per year
 
@@ -173,6 +165,14 @@ library(tidyverse) #where the mpg data is stored
 ```{r, echo=FALSE}
 knitr::kable(head(x), format = 'html')
 ```
+]
+
+.panel[.panel-name[Economic]
+- Loss IDR 144 Billion/year (£7,714,513/year) because of the environmental damage, such as: (citation: KAJIAN PEMANFAATAN DEM SRTM & GOOGLE EARTH UNTUK PARAMETER PENILAIAN POTENSI KERUGIAN EKONOMI AKIBAT BANJIR ROB)
+  - Production land damage (fishpond, and rice field)
+  - Housing damage
+  - Infrastructure damage
+- Spend IDR 14,209,324,000/year (£761,236/year) to handle waste `r Citep(myBib, "rahmaIntroductionStudyTidal2019")`
 ]
 ]
 
@@ -237,6 +237,9 @@ Prepare Participatory Contingency Plan
 ```{r echo=FALSE, out.width='30%', fig.align='center'}
 knitr::include_graphics("img/100res.jpg")
 ```
+
+Source: `r Citet(myBib, "semarangcitygovernmentResilientSemarangMoving2016")`
+
 ---
 class: inverse, center, middle
 
@@ -254,6 +257,8 @@ Policies and practices for disaster risk management should be based on vulnerabi
 - To develop, periodically update and disseminate location-based disaster risk information including **risk maps** to decision makers, the public and at-risk communities in an appropriate format by using **geospatial information technology**; and
 
 - To promote real time access to data, make use of space and in situ information including **GIS** and use IT innovations to enhance measurement tools and the **collection, analysis and dissemination of data**.
+
+Source: `r Citet(myBib, "unitednationsofficefordisasterriskreductionSendaiFrameworkDisaster2015")`
 ---
 #Case Study
 
@@ -327,7 +332,7 @@ knitr::include_graphics('img/bivariate.jpeg')
 
 1. Build a map (raster) of each vulnerability input parameter, classified on a quantile scale
 
-1. Combine the hazard and vulnerability maps together to produce single risk index
+1. Combine the hazard and vulnerability maps together to produce a bivariate risk map
 
 1. Validate the model using testing set of data
 
